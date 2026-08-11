@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+html{
+  scroll-behavior: smooth; }
+
+  ::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #000000;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #000000 transparent;
+}
+#root{
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+  color: white;
+  font-family: "poppins";
+  scrollbar-width: thin;
+}
+
+
+.scroll-arrow {
+  animation: scrollArrow 1.5s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  animation: scrollArrow 2s ease-in-out infinite;
+}
+
+@keyframes scrollArrow {
+  0% {
+    transform: translateY(-5px);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

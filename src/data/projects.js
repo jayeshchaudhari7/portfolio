@@ -12,7 +12,7 @@ export const projects = [
       "JavaScript",
       "Context API",
     ],
-    image: "src/assets/images/1.webp",
+    image: "src/assets/images/1.jpg",
     link: "https://github.com/jayeshchaudhari7",
   },
 
@@ -29,7 +29,7 @@ export const projects = [
       "MongoDB",
       "Tailwind",
     ],
-    image: "src/assets/images/2.webp",
+    image: "src/assets/images/2.jpg",
     link: "https://github.com/jayeshchaudhari7",
   },
 
@@ -46,7 +46,7 @@ export const projects = [
       "Tailwind",
       "LocalStorage",
     ],
-    image: "src/assets/images/3.webp",
+    image: "src/assets/images/3.jpg",
     link: "https://github.com/jayeshchaudhari7",
   },
 
@@ -63,7 +63,7 @@ export const projects = [
       "GSAP",
       "ScrollTrigger",
     ],
-    image: "src/assets/images/4.webp",
+    image: "src/assets/images/4.jpg",
     link: "https://github.com/jayeshchaudhari7",
   },
 ];

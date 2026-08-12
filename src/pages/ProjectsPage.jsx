@@ -1,14 +1,8 @@
-// src/pages/ProjectsPage.jsx
-
 import React, { useEffect, useRef } from "react";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-
 import ProjectShowcase from "../components/ProjectShowcase";
 import { projects } from "../data/projects";
-
-import {
-  initProjectsAnimation,
-} from "../animations/projectsAnimation";
+import {initProjectsAnimation} from "../animations/projectsAnimation";
 
 const ProjectsPage = () => {
 
@@ -29,51 +23,13 @@ const ProjectsPage = () => {
   return (
 
     <main
-      ref={pageRef}
-      className="
-        min-h-screen
-        overflow-hidden
-        bg-[#050505]
-        text-white
-      "
-    >
+      ref={pageRef} className=" min-h-screen overflow-hidden bg-[#050505] text-white" >
 
-      {/* =====================================================
-          HERO
-      ===================================================== */}
-
-      <section
-        className="
-          projects-hero
-          flex
-          min-h-screen
-          flex-col
-          justify-between
-          px-6
-          pb-10
-          pt-32
-          md:px-10
-          md:pb-12
-          md:pt-40
-          lg:px-16
-        "
-      >
-
-        {/* MAIN TITLE */}
+      <section className=" projects-hero flex  min-h-screen flex-col justify-between px-6 pb-10 pt-32 md:px-10 md:pb-12 md:pt-40 lg:px-16 ">
 
         <div>
-
-          <h1
-            className="
-              projects-hero-title
-              max-w-[1500px]
-              text-[clamp(4rem,11vw,11rem)]
-              font-normal
-              leading-[0.82]
-              tracking-[-0.075em]
-            "
-          >
-
+          <h1 className="projects-hero-title max-w-[1500px] text-[clamp(4rem,11vw,11rem)] font-normal
+              leading-[0.82] tracking-[-0.075em] ">
             Selected
             <br />
 
@@ -83,25 +39,9 @@ const ProjectsPage = () => {
 
           </h1>
 
+          <div className="mt-12 flex justify-end">
 
-          <div
-            className="
-              mt-12
-              flex
-              justify-end
-            "
-          >
-
-            <p
-              className="
-                projects-hero-description
-                max-w-xl
-                text-base
-                leading-7
-                text-white/40
-                md:text-lg
-              "
-            >
+            <p className="projects-hero-description max-w-xl text-base leading-7 text-white/40 md:text-lg">
               A collection of websites, interfaces and
               interactive experiences I've designed and
               developed while exploring the intersection
@@ -112,50 +52,15 @@ const ProjectsPage = () => {
 
         </div>
 
+        <div className=" flex items-center gap-5" >
 
-        {/* BOTTOM */}
-
-        <div
-          className="
-            flex
-            items-center
-            gap-5
-          "
-        >
-
-          <span
-            className="
-              text-[10px]
-              uppercase
-              tracking-[0.25em]
-              text-white/30
-            "
-          >
+          <span className=" text-[10px] uppercase tracking-[0.25em] text-white/30">
             Scroll to explore
           </span>
 
 
-          <div
-            className="
-              flex
-              h-10
-              w-10
-              items-center
-              justify-center
-              rounded-full
-              border
-              border-white/10
-            "
-          >
-
-            <ArrowDown
-              size={15}
-              className="
-                animate-bounce
-                text-white/50
-              "
-            />
-
+          <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
+            <ArrowDown size={15} className=" animate-bounce text-white/50" />
           </div>
 
         </div>
@@ -163,80 +68,29 @@ const ProjectsPage = () => {
       </section>
 
 
-      <section
-        className="
-          bg-white
-        "
-      >
+      <section className="bg-white">
 
-        <div
-          className="
-            px-4
-            py-10
-            md:px-8
-            lg:px-12
-          "
-        >
+        <div className="px-4 py-10 md:px-8 lg:px-12">
 
-          <div
-            className="
-              flex
-              items-center
-              justify-between
-            "
-          >
+          <div className="flex items-center justify-between">
 
-            <span
-              className="
-                text-[10px]
-                uppercase
-                tracking-[0.3em]
-                text-black
-              "
-            >
+            <span className=" text-[10px] uppercase tracking-[0.3em] text-black ">
               01 — Featured projects
             </span>
 
-
-            <span
-              className="
-                text-[10px]
-                text-black
-              "
-            >
-              {String(
-                projects.length
-              ).padStart(2, "0")}{" "}
+            <span className=" text-[10px] text-black" >
+              { String( projects.length).padStart(2, "0")}{" "}
               projects
             </span>
-
           </div>
-
         </div>
-
-
-        {/* YOUR EXISTING SHOWCASE */}
 
         <ProjectShowcase />
 
       </section>
 
-
-      {/* =====================================================
-          OTHER PROJECTS
-      ===================================================== */}
-
       <section
-        className="
-          border-t
-          border-white/10
-          px-6
-          py-24
-          md:px-10
-          md:py-32
-          lg:px-16
-        "
-      >
+        className="border-t border-white/10 px-6 py-24 md:px-10  md:py-32 lg:px-16" >
 
         <div
           className="
@@ -293,7 +147,7 @@ const ProjectsPage = () => {
                 className="
                   project-list-item
                   group
-                  grid
+                  grid  
                   gap-6
                   border-t
                   border-white/10
@@ -393,34 +247,10 @@ const ProjectsPage = () => {
 
                 {/* ARROW */}
 
-                <div
-                  className="
-                    flex
-                    h-10
-                    w-10
-                    items-center
-                    justify-center
-                    rounded-full
-                    border
-                    border-white/10
-                    transition-all
-                    duration-500
-                    group-hover:-translate-y-1
-                    group-hover:border-white/40
-                  "
-                >
+                <div className=" flex h-10 w-10 items-center justify-center rounded-full border border-white/10 transition-all duration-500 group-hover:-translate-y-1 group-hover:border-white/40 " >
 
-                  <ArrowUpRight
-                    size={17}
-                    strokeWidth={1.5}
-                    className="
-                      transition-transform
-                      duration-500
-                      group-hover:-translate-y-0.5
-                      group-hover:translate-x-0.5
-                    "
-                  />
-
+                  <ArrowUpRight size={17} strokeWidth={1.5}
+                    className=" transition-transform duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 " />   
                 </div>
 
               </a>

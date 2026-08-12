@@ -20,19 +20,9 @@ export const initNavbarAnimation = () => {
         return;
     }
 
-
-    // ==========================================
-    // CONFIG
-    // ==========================================
-
     const COMPACT_WIDTH = 420;
     const EXPANDED_WIDTH = 800;
     const SCROLL_DISTANCE = 80;
-
-
-    // ==========================================
-    // INITIAL STATE
-    // ==========================================
 
     gsap.set(normalNavbar, {
         xPercent: -50,
@@ -64,25 +54,15 @@ export const initNavbarAnimation = () => {
         ease: "power1.inOut",
         paused: true,
     });
-    // ==========================================
-    // STATE
-    // ==========================================
 
     let isScrolled = false;
     let isExpanded = false;
-
-
-    // ==========================================
-    // SCROLL HANDLER
-    // ==========================================
 
     const handleScroll = () => {
 
         const shouldBeScrolled =
             window.scrollY > SCROLL_DISTANCE;
 
-
-        // Don't run the same animation repeatedly
         if (shouldBeScrolled === isScrolled) {
             return;
         }
@@ -90,16 +70,7 @@ export const initNavbarAnimation = () => {
 
         isScrolled = shouldBeScrolled;
 
-
-        // ========================================
-        // SCROLL DOWN
-        // ========================================
-
         if (isScrolled) {
-
-            // -------------------------------
-            // Hide normal navbar
-            // -------------------------------
 
             gsap.to(normalNavbar, {
                 y: -20,
@@ -113,11 +84,6 @@ export const initNavbarAnimation = () => {
                 },
             });
 
-
-            // -------------------------------
-            // Show scrolled navbar
-            // -------------------------------
-
             gsap.set(scrolledNavbar, {
                 display: "block",
                 xPercent: -50,
@@ -125,14 +91,12 @@ export const initNavbarAnimation = () => {
 
             gsap.fromTo(
                 scrolledNavbar,
-
                 {
                     y: -20,
                     opacity: 0,
                     scale: 0.95,
                     width: COMPACT_WIDTH,
                 },
-
                 {
                     y: 0,
                     opacity: 1,
@@ -142,14 +106,8 @@ export const initNavbarAnimation = () => {
                     ease: "power3.out",
                 }
             );
-
             dotWiggle.restart();
         }
-
-
-        // ========================================
-        // BACK TO TOP
-        // ========================================
 
         else {
             isExpanded = false;
@@ -159,40 +117,21 @@ export const initNavbarAnimation = () => {
                 y: 0,
             });
 
-            // -------------------------------
-            // Reset expanded content
-            // -------------------------------
-
             gsap.to(expandedContent, {
                 opacity: 0,
                 duration: 0.2,
             });
-
-
-            // -------------------------------
-            // Show dots
-            // -------------------------------
 
             gsap.to(dots, {
                 opacity: 1,
                 duration: 0.2,
             });
 
-
-            // -------------------------------
-            // Reset width
-            // -------------------------------
-
             gsap.to(scrolledNavbar, {
                 width: COMPACT_WIDTH,
                 duration: 0.3,
                 ease: "power3.out",
             });
-
-
-            // -------------------------------
-            // Hide scrolled navbar
-            // -------------------------------
 
             gsap.to(scrolledNavbar, {
                 y: -15,
@@ -205,11 +144,6 @@ export const initNavbarAnimation = () => {
                     scrolledNavbar.style.display = "none";
                 },
             });
-
-
-            // -------------------------------
-            // Show normal navbar
-            // -------------------------------
 
             gsap.to(normalNavbar, {
                 y: 0,
@@ -232,28 +166,14 @@ export const initNavbarAnimation = () => {
         handleScroll
     );
 
-
-    // ==========================================
-    // EXPAND NAVBAR
-    // ==========================================
-
     const expandNavbar = () => {
-
-        // Only expand after scrolling
         if (!isScrolled) {
             return;
         }
-
         if (isExpanded) {
             return;
         }
-
         isExpanded = true;
-
-
-        // -------------------------------
-        // Expand width
-        // -------------------------------
 
         gsap.to(scrolledNavbar, {
             width: EXPANDED_WIDTH,
@@ -261,21 +181,11 @@ export const initNavbarAnimation = () => {
             ease: "power3.out",
         });
 
-
-        // -------------------------------
-        // Hide dots
-        // -------------------------------
-
         gsap.to(dots, {
             opacity: 0,
             duration: 0.2,
             ease: "power2.out",
         });
-
-
-        // -------------------------------
-        // Show navigation
-        // -------------------------------
 
         gsap.to(expandedContent, {
             opacity: 1,
@@ -286,34 +196,18 @@ export const initNavbarAnimation = () => {
 
     };
 
-
-    // ==========================================
-    // COLLAPSE NAVBAR
-    // ==========================================
-
     const collapseNavbar = () => {
 
         if (!isExpanded) {
             return;
         }
-
         isExpanded = false;
-
-
-        // -------------------------------
-        // Hide navigation
-        // -------------------------------
 
         gsap.to(expandedContent, {
             opacity: 0,
             duration: 0.2,
             ease: "power2.out",
         });
-
-
-        // -------------------------------
-        // Show dots
-        // -------------------------------
 
         gsap.to(dots, {
             opacity: 1,
@@ -322,11 +216,6 @@ export const initNavbarAnimation = () => {
             ease: "power2.out",
         });
 
-
-        // -------------------------------
-        // Shrink navbar
-        // -------------------------------
-
         gsap.to(scrolledNavbar, {
             width: COMPACT_WIDTH,
             duration: 0.55,
@@ -334,11 +223,6 @@ export const initNavbarAnimation = () => {
         });
 
     };
-
-
-    // ==========================================
-    // HOVER EVENTS
-    // ==========================================
 
     scrolledNavbar.addEventListener(
         "mouseenter",
@@ -350,29 +234,20 @@ export const initNavbarAnimation = () => {
         collapseNavbar
     );
 
-
-    // ==========================================
-    // CLEANUP
-    // ==========================================
-
     return () => {
 
         window.removeEventListener(
             "scroll",
             handleScroll
         );
-
         scrolledNavbar.removeEventListener(
             "mouseenter",
             expandNavbar
         );
-
         scrolledNavbar.removeEventListener(
             "mouseleave",
             collapseNavbar
         );
-
-
         gsap.killTweensOf([
             normalNavbar,
             scrolledNavbar,

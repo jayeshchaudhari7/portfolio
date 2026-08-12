@@ -15,7 +15,6 @@ export const initSocialDashboardAnimation = (
   const cards =
     section.querySelectorAll(".social-card");
 
-
   const ctx = gsap.context(() => {
 
     gsap.fromTo(
@@ -38,7 +37,6 @@ export const initSocialDashboardAnimation = (
         },
       }
     );
-
 
     gsap.fromTo(
       cards,
@@ -63,7 +61,6 @@ export const initSocialDashboardAnimation = (
     );
 
   }, section);
-
 
   return () => ctx.revert();
 };

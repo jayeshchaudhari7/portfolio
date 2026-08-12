@@ -17,22 +17,11 @@ export const initTechStackAnimation = (dock) => {
 
   if (!items.length) return;
 
-  // ==========================================
-  // SETTINGS
-  // ==========================================
-
   const NORMAL_SCALE = 1;
 
-  // Only slightly bigger
   const HOVER_SCALE = 1.18;
 
-  // Move upward
   const HOVER_Y = -15;
-
-
-  // ==========================================
-  // INITIAL STATE
-  // ==========================================
 
   gsap.set(icons, {
     scale: NORMAL_SCALE,
@@ -46,13 +35,7 @@ export const initTechStackAnimation = (dock) => {
     scale: 0.9,
   });
 
-
-  // ==========================================
-  // HOVER HANDLERS
-  // ==========================================
-
   const handlers = [];
-
 
   items.forEach((item, index) => {
 
@@ -60,17 +43,10 @@ export const initTechStackAnimation = (dock) => {
     const tooltip = tooltips[index];
 
 
-    // ========================================
-    // MOUSE ENTER
-    // ========================================
-
     const handleEnter = () => {
 
-      // Reset all other icons
       icons.forEach((otherIcon, otherIndex) => {
-
         if (otherIndex !== index) {
-
           gsap.to(otherIcon, {
             scale: NORMAL_SCALE,
             y: 0,
@@ -85,15 +61,9 @@ export const initTechStackAnimation = (dock) => {
             duration: 0.15,
             ease: "power2.out",
           });
-
         }
-
       });
 
-
-      // ========================================
-      // MOVE + SLIGHTLY SCALE CURRENT ICON
-      // ========================================
 
       gsap.to(icon, {
         scale: HOVER_SCALE,
@@ -102,11 +72,6 @@ export const initTechStackAnimation = (dock) => {
         ease: "power3.out",
       });
 
-
-      // ========================================
-      // SHOW TOOLTIP
-      // ========================================
-
       gsap.to(tooltip, {
         opacity: 1,
         y: 0,
@@ -114,16 +79,9 @@ export const initTechStackAnimation = (dock) => {
         duration: 0.25,
         ease: "power3.out",
       });
-
     };
 
-
-    // ========================================
-    // MOUSE LEAVE
-    // ========================================
-
     const handleLeave = () => {
-
       gsap.to(icon, {
         scale: NORMAL_SCALE,
         y: 0,
@@ -138,9 +96,7 @@ export const initTechStackAnimation = (dock) => {
         duration: 0.18,
         ease: "power2.out",
       });
-
     };
-
 
     item.addEventListener(
       "mouseenter",
@@ -152,7 +108,6 @@ export const initTechStackAnimation = (dock) => {
       handleLeave
     );
 
-
     handlers.push({
       item,
       handleEnter,
@@ -160,11 +115,6 @@ export const initTechStackAnimation = (dock) => {
     });
 
   });
-
-
-  // ==========================================
-  // CLEANUP
-  // ==========================================
 
   return () => {
 

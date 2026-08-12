@@ -16,16 +16,13 @@ export const initFooterAnimation = (container) => {
       scrollTrigger: {
         trigger: container,
 
-        // Animation starts when the TOP of footer
-        // reaches 70% of the viewport
         start: "top 60%",
         // scrub:true,
         // repeat:-1,
         // yoyo:true,
         // Play only once
         toggleActions: "play none none none",
-
-        // markers: true, // uncomment while debugging
+        // markers: true, 
       },
     });
 

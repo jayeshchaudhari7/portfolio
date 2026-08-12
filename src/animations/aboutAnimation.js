@@ -8,10 +8,6 @@ export const initAboutAnimation = (page) => {
 
   const ctx = gsap.context(() => {
 
-    // ==========================================
-    // INTRO WORD REVEAL
-    // ==========================================
-
     gsap.from(".about-word", {
       y: 80,
       opacity: 0,
@@ -19,11 +15,6 @@ export const initAboutAnimation = (page) => {
       stagger: 0.025,
       ease: "power4.out",
     });
-
-
-    // ==========================================
-    // IMAGE
-    // ==========================================
 
     gsap.from(".about-image", {
       y: 100,
@@ -38,11 +29,6 @@ export const initAboutAnimation = (page) => {
       },
     });
 
-
-    // ==========================================
-    // ABOUT HEADING
-    // ==========================================
-
     gsap.from(".about-heading", {
       y: 70,
       opacity: 0,
@@ -54,11 +40,6 @@ export const initAboutAnimation = (page) => {
       },
     });
 
-
-    // ==========================================
-    // DESCRIPTION
-    // ==========================================
-
     gsap.from(".about-description", {
       y: 40,
       opacity: 0,
@@ -69,11 +50,6 @@ export const initAboutAnimation = (page) => {
         start: "top 85%",
       },
     });
-
-
-    // ==========================================
-    // SERVICES
-    // ==========================================
 
     gsap.from(".service-item", {
       y: 70,

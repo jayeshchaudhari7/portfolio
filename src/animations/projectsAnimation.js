@@ -7,12 +7,7 @@ export const initProjectsAnimation = (page) => {
 
   if (!page) return;
 
-
   const ctx = gsap.context(() => {
-
-    // =========================================
-    // HERO TITLE
-    // =========================================
 
     gsap.from(
       ".projects-hero-title",
@@ -24,11 +19,6 @@ export const initProjectsAnimation = (page) => {
       }
     );
 
-
-    // =========================================
-    // HERO DESCRIPTION
-    // =========================================
-
     gsap.from(
       ".projects-hero-description",
       {
@@ -39,11 +29,6 @@ export const initProjectsAnimation = (page) => {
         ease: "power3.out",
       }
     );
-
-
-    // =========================================
-    // PROJECT LIST
-    // =========================================
 
     gsap.from(
       ".project-list-item",
@@ -61,11 +46,6 @@ export const initProjectsAnimation = (page) => {
       }
     );
 
-
-    // =========================================
-    // CTA
-    // =========================================
-
     gsap.from(
       ".projects-cta",
       {
@@ -79,9 +59,7 @@ export const initProjectsAnimation = (page) => {
         },
       }
     );
-
   }, page);
-
 
   return () => {
     ctx.revert();

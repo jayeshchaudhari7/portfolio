@@ -1,12 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-
-import {
-  initAboutAnimation,
-} from "../animations/aboutAnimation";
-
-import profileImage from "../assets/images/profile.png";
-
+import { initAboutAnimation } from "../animations/aboutAnimation";
+import profileImage from "../assets/images/profile.jpeg";
 import webDevelopmentVideo from "../assets/videos/1.mp4"
 import uiUxVideo from "../assets/videos/2.mp4"
 import creativeDevelopmentVideo from "../assets/videos/3.mp4"
@@ -24,94 +19,23 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <main
-      ref={pageRef}
-      className="
-        min-h-screen
-        overflow-hidden
-        bg-[#050505]
-        text-white
-      "
-    >
+    <main ref={pageRef} className="min-h-screen overflow-hidden bg-[#050505] text-white">
 
-      <section
-        className="
-          about-intro
-          px-6
-          pb-24
-          pt-16
-          md:px-10
-          md:pb-32
-          md:pt-25
-          lg:px-16
-          lg:pt-30
-        "
-      >
+      <section className=" about-intro px-6 pb-24 pt-16 md:px-10 md:pb-32 md:pt-25 lg:px-16 lg:pt-30">
 
-        {/* TOP LABEL */}
-
-        <div
-          className="
-            mb-16
-            flex
-            items-center
-            gap-4
-            md:mb-24
-          "
-        >
-
-          <span
-            className="
-              text-[10px]
-              uppercase
-              tracking-[0.3em]
-              text-white/30
-            "
-          >
+        <div className=" mb-16 flex items-center gap-4 md:mb-24">
+          <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">
             01
           </span>
-
-          <span
-            className="
-              h-px
-              w-12
-              bg-white/20
-            "
-          />
-
-          <span
-            className="
-              text-[10px]
-              uppercase
-              tracking-[0.3em]
-              text-white/30
-            "
-          >
+          <span className=" h-px w-12 bg-white/20" />
+          <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">
             About me
           </span>
-
         </div>
 
+        <div className="about-intro-text max-w-[1500px]">
 
-        {/* =================================================
-            LARGE INTRODUCTION
-        ================================================= */}
-
-        <div
-          className="
-            about-intro-text
-            max-w-[1500px]
-          "
-        >
-
-          <p
-            className="
-              text-[clamp(2.8rem,6vw,7rem)]
-              font-normal
-              leading-[1.05]
-              tracking-[-0.055em]
-            "
-          >
+          <p className=" text-[clamp(2.8rem,6vw,7rem)] font-normal leading-[1.05] tracking-[-0.055em]">
 
             <span className="about-word">
               Hi
@@ -133,21 +57,11 @@ const AboutPage = () => {
               is
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white
-              "
-            >
+            <span className="about-word text-white">
               Jayesh
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white
-              "
-            >
+            <span className="about-word text-white">
               Chaudhari.
             </span>{" "}
 
@@ -163,30 +77,15 @@ const AboutPage = () => {
               a
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white/40
-              "
-            >
+            <span className="about-word text-white/40">
               creative
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white/40
-              "
-            >
+            <span className=" about-word text-white/40">
               web
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white/40
-              "
-            >
+            <span className="about-wordtext-white/40">
               developer
             </span>{" "}
 
@@ -202,12 +101,7 @@ const AboutPage = () => {
               building
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white/40
-              "
-            >
+            <span className="about-word text-white/40">
               modern,
             </span>{" "}
 
@@ -223,134 +117,41 @@ const AboutPage = () => {
               meaningful
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white/40
-              "
-            >
+            <span className="about-word text-white/40">
               digital
             </span>{" "}
 
-            <span
-              className="
-                about-word
-                text-white/40
-              "
-            >
+            <span className="about-word text-white/40">
               experiences.
             </span>
-
           </p>
-
         </div>
-
       </section>
 
-      <section
-        className="
-          grid
-          gap-12
-          border-t
-          border-white/10
-          px-6
-          py-16
-          md:px-10
-          md:py-24
-          lg:grid-cols-2
-          lg:px-16
-        "
-      >
+      <section className="grid gap-12 border-t border-white/10 px-6 py-16 md:px-10 md:py-24 lg:grid-cols-2 lg:px-16">
 
-        {/* IMAGE */}
+        <div className="flex items-center justify-center lg:justify-start">
 
-        <div
-          className="
-            flex
-            items-center
-            justify-center
-            lg:justify-start
-          "
-        >
-
-          <div
-            className="
-              about-image
-              relative
-              aspect-[4/5]
-              w-full
-              max-w-[480px]
-              overflow-hidden
-              bg-[#111]
-            "
-          >
-
-            <img
-              src={profileImage}
-              alt="Jayesh Chaudhari"
-              className="
-                h-full
-                w-full
-                object-cover
-                grayscale
-                transition-all
-                duration-700
-                hover:scale-[1.03]
-                hover:grayscale-0
-              "
-            />
-
+          <div className=" about-image relative aspect-[4/5] w-full max-w-[480px]  overflow-hidden  bg-[#111]">
+            <img src={profileImage} alt="Jayesh Chaudhari" className=" h-full w-full object-cover grayscale transition-all  duration-700 hover:scale-[1.03] hover:grayscale-0 " />
           </div>
 
         </div>
 
-        <div
-          className="
-            flex
-            flex-col
-            justify-center
-          "
-        >
+        <div className="flex flex-col justify-center">
 
-          <p
-            className="
-              mb-8
-              text-[10px]
-              uppercase
-              tracking-[0.3em]
-              text-white/30
-            "
-          >
+          <p className="mb-8 text-[10px] uppercase tracking-[0.3em] text-white/30">
             A little about me
           </p>
 
 
-          <h2
-            className="
-              about-heading
-              max-w-xl
-              text-3xl
-              font-normal
-              leading-[1.05]
-              tracking-[-0.04em]
-              md:text-5xl
-            "
-          >
+          <h2 className="about-heading max-w-xl text-3xl font-normal leading-[1.05] tracking-[-0.04em]md:text-5xl">
             I enjoy creating things
             that live on the web.
           </h2>
 
 
-          <p
-            className="
-              about-description
-              mt-8
-              max-w-xl
-              text-base
-              leading-7
-              text-white/40
-            "
-          >
+          <p className="about-description mt-8 max-w-xl text-base leading-7text-white/40">
             My journey started with curiosity about
             how websites work and gradually turned
             into a passion for building them.
@@ -365,275 +166,93 @@ const AboutPage = () => {
           </p>
 
 
-          <a
-            href="/work"
-            className="
-              group
-              mt-10
-              flex
-              w-fit
-              items-center
-              gap-3
-              border-b
-              border-white/30
-              pb-2
-              text-sm
-              text-white
-              transition-all
-              duration-300
-              hover:gap-5
-              hover:border-white
-            "
-          >
+          <a href="/work" className=" group mt-10  flex w-fit items-center gap-3 border-b border-white/30 pb-2 text-sm  text-white transition-all duration-300 hover:gap-5 hover:border-white" >
 
             Explore my work
-
-            <ArrowUpRight
-              size={16}
-              strokeWidth={1.5}
-              className="
-                transition-transform
-                duration-300
-                group-hover:-translate-y-1
-                group-hover:translate-x-1
-              "
-            />
-
+            <ArrowUpRight size={16} strokeWidth={1.5} className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
           </a>
-
         </div>
-
       </section>
 
 
-      {/* =====================================================
-    EDUCATION
-===================================================== */}
-
-      <section
-        className="
-    education-section
-    border-t
-    border-white/10
-    px-6
-    py-16
-    md:px-10
-    md:py-24
-    lg:px-16
-  "
-      >
-        <SectionLabel
-          number="02"
-          title="Education"
-        />
+      <section className="education-section border-t border-white/10 px-6 py-16 md:px-10 md:py-24 lg:px-16 ">
+        <SectionLabel number="02" title="Education" />
 
         <div className="mt-12">
 
-          {/* EDUCATION ITEM */}
+          <div className=" education-item grid gap-6 border-t border-white/10 py-8 md:grid-cols-[70px_1fr_auto] md:items-start "  >
 
-          <div
-            className="
-        education-item
-        grid
-        gap-6
-        border-t
-        border-white/10
-        py-8
-        md:grid-cols-[70px_1fr_auto]
-        md:items-start
-      "
-          >
-
-            {/* NUMBER */}
-
-            <span
-              className="
-          text-xs
-          tracking-wider
-          text-white/30
-        "
-            >
+            <span className=" text-xs tracking-wider text-white/30" >
               01
             </span>
 
-
-            {/* COLLEGE + DEGREE */}
-
             <div>
-
-              <h3
-                className="
-            text-3xl
-            font-normal
-            tracking-[-0.04em]
-            text-white
-            md:text-5xl
-          "
-              >
+              <h3 className="text-3xl font-normal tracking-[-0.04em] text-white  md:text-5xl">
                 MIT-ADT University
               </h3>
 
-              <p
-                className="
-            mt-3
-            text-base
-            text-white/50
-            md:text-lg
-          "
-              >
+              <p className=" mt-3 text-base text-white/50 md:text-lg">
                 B.Tech — Computer Science & Engineering
               </p>
 
             </div>
-            
 
-
-            {/* YEAR */}
-
-            <span
-              className="
-          text-sm
-          text-white/35
-          md:pt-2
-        "
-            >
+            <span className="text-sm text-white/35 md:pt-2">
               2023 — 2026
             </span>
 
           </div>
 
-           <div
-            className="
-        education-item
-        grid
-        gap-6
-        border-t
-        border-white/10
-        py-8
-        md:grid-cols-[70px_1fr_auto]
-        md:items-start
-      "
-          >
+          <div className=" education-item grid gap-6 border-t border-white/10 py-8 md:grid-cols-[70px_1fr_auto] md:items-start">
 
-            {/* NUMBER */}
-
-            <span
-              className="
-          text-xs
-          tracking-wider
-          text-white/30
-        "
-            >
+            <span className=" text-xs tracking-wider text-white/30">
               02
             </span>
 
-
-            {/* COLLEGE + DEGREE */}
-
             <div>
 
-              <h3
-                className="
-            text-3xl
-            font-normal
-            tracking-[-0.04em]
-            text-white
-            md:text-5xl
-          "
-              >
+              <h3 className="text-3xl font-normal tracking-[-0.04em] text-white md:text-5xl">
                 R.C.Patel Polytechnic
               </h3>
 
-              <p
-                className="
-            mt-3
-            text-base
-            text-white/50
-            md:text-lg
-          "
-              >
+              <p className=" mt-3 text-base text-white/50 md:text-lg">
                 Diploma — Computer Science & Engineering
               </p>
 
             </div>
-            
 
-
-            {/* YEAR */}
-
-            <span
-              className="
-          text-sm
-          text-white/35
-          md:pt-2
-        "
-            >
+            <span className="text-sm text-white/35 md:pt-2">
               2020 — 2023
             </span>
 
-          </div>  
-
+          </div>
         </div>
-
       </section>
 
 
-<section
-  className="
-    services-section
-    border-t
-    border-white/10
-    px-6
-    py-16
-    md:px-10
-    md:py-24
-    lg:px-16
-  "
->
-  <SectionLabel
-    number="03"
-    title="What I do"
-  />
+      <section className="services-section border-t border-white/10 px-6  py-16 md:px-10 md:py-24 lg:px-16">
+        <SectionLabel
+          number="03"
+          title="What I do"
+        />
 
-  <div className="mt-12">
+        <div className="mt-12">
 
-    <Service
-      number="01"
-      title="Web Development"
-      description="
-        Building modern, fast and scalable
-        websites using React, JavaScript
-        and modern frontend technologies.
-      "
-      video={webDevelopmentVideo}
-    />
+          <Service number="01" title="Web Development" description=" Building modern, fast and scalable websites using React, JavaScript and modern frontend technologies."
+            video={webDevelopmentVideo}
+          />
 
-    <Service
-      number="02"
-      title="UI / UX Design"
-      description="
-        Designing clean and intuitive
-        interfaces with focus on usability,
-        visual hierarchy and interaction.
-      "
-      video={uiUxVideo}
-    />
+          <Service number="02" title="UI / UX Design" description=" Designing clean and intuitive interfaces with focus on usability, visual hierarchy and interaction."
+            video={uiUxVideo}
+          />
 
-    <Service
-      number="03"
-      title="Creative Development"
-      description="
-        Creating interactive experiences
-        with GSAP, animations and meaningful
-        motion.
-      "
-      video={creativeDevelopmentVideo}
-    />
+          <Service  number="03" title="Creative Development" description="Creating interactive experiences
+        with GSAP, animations and meaningful motion."
+            video={creativeDevelopmentVideo}
+          />
 
-  </div>
-
-</section>
-
+        </div>
+      </section>
     </main>
   );
 };
@@ -645,41 +264,15 @@ const SectionLabel = ({
 }) => {
 
   return (
-    <div
-      className="
-        flex
-        items-center
-        gap-4
-      "
-    >
+    <div className=" flex items-center gap-4">
 
-      <span
-        className="
-          text-[10px]
-          uppercase
-          tracking-[0.3em]
-          text-white/30
-        "
-      >
+      <span className="text-[10px] uppercase tracking-[0.3em] text-white/30">
         {number}
       </span>
 
-      <span
-        className="
-          h-px
-          w-12
-          bg-white/20
-        "
-      />
+      <span className=" h-px w-12 bg-white/20" />
 
-      <span
-        className="
-          text-[10px]
-          uppercase
-          tracking-[0.3em]
-          text-white/30
-        "
-      >
+      <span className="text-[10px] uppercase tracking-[0.3em] text-white/30" >
         {title}
       </span>
 
@@ -705,13 +298,12 @@ const Service = ({
 
     if (!videoElement) return;
 
-    // Load video only when hovered
     if (!videoElement.src) {
       videoElement.src = video;
       videoElement.load();
     }
 
-    videoElement.play().catch(() => {});
+    videoElement.play().catch(() => { });
   };
 
 
@@ -734,100 +326,26 @@ const Service = ({
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="
-        service-item
-        group
-        grid
-        gap-5
-        border-t
-        border-white/10
-        py-8
-        transition-colors
-        duration-300
-        md:grid-cols-[70px_35%_1fr]
-        md:items-center
-      "
-    >
+      className="service-item group grid gap-5 border-t border-white/10 py-8 transition-colors duration-300 md:grid-cols-[70px_35%_1fr] md:items-center " >
 
-      {/* NUMBER */}
-
-      <span
-        className="
-          text-xs
-          text-white/30
-          transition-colors
-          duration-300
-          group-hover:text-white
-        "
-      >
+      <span className=" text-xs text-white/30 transition-colors duration-300 group-hover:text-white">
         {number}
       </span>
 
-
-      {/* TITLE */}
-
-      <h3
-        className="
-          text-3xl
-          font-normal
-          tracking-[-0.04em]
-          transition-transform
-          duration-500
-          group-hover:translate-x-2
-          md:text-5xl
-        "
-      >
+      <h3 className="text-3xl font-normal tracking-[-0.04em] transition-transform duration-500 group-hover:translate-x-2 md:text-5xl" >
         {title}
       </h3>
 
+      <div className=" flex items-center justify-between gap-8">
 
-      {/* DESCRIPTION + VIDEO */}
-
-      <div
-        className="
-          flex
-          items-center
-          justify-between
-          gap-8
-        "
-      >
-
-        {/* DESCRIPTION */}
-
-        <p
-          className="
-            max-w-lg
-            whitespace-pre-line
-            text-sm
-            leading-6
-            text-white/40
-          "
-        >
+        <p className=" max-w-lg whitespace-pre-line text-sm leading-6 text-white/40" >
           {description}
         </p>
 
 
         {/* VIDEO */}
 
-        <div
-          className="
-            relative
-            h-20
-            w-32
-            shrink-0
-            overflow-hidden
-            rounded-md
-            border
-            border-white/10
-            bg-white/5
-            opacity-70
-            transition-all
-            duration-500
-            group-hover:h-28
-            group-hover:w-44
-            group-hover:opacity-100
-          "
-        >
+        <div className=" relative h-20 w-32 shrink-0 overflow-hidden rounded-md border border-white/10 bg-white/5 opacity-70 transition-all duration-500 group-hover:h-28 group-hover:w-44 group-hover:opacity-100 ">
 
           <video
             ref={videoRef}
@@ -835,58 +353,21 @@ const Service = ({
             loop
             playsInline
             preload="none"
-            className="
-              h-full
-              w-full
-              object-cover
-            "
-          />
+            className=" h-full w-full object-cover" />
 
-          {/* PLAY / HOVER INDICATOR */}
+          <div className="pointer-events-none absolute inset-0flex items-center justify-center bg-black/20
+              opacity-100 transition-opacity duration-300 group-hover:opacity-0">
 
-          <div
-            className="
-              pointer-events-none
-              absolute
-              inset-0
-              flex
-              items-center
-              justify-center
-              bg-black/20
-              opacity-100
-              transition-opacity
-              duration-300
-              group-hover:opacity-0
-            "
-          >
-
-            <span
-              className="
-                rounded-full
-                border
-                border-white/20
-                bg-black/40
-                px-3
-                py-1
-                text-[9px]
-                uppercase
-                tracking-[0.2em]
-                text-white/70
-                backdrop-blur-sm
-              "
-            >
+            <span className="rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[9px] uppercase tracking-[0.2em] text-white/70 backdrop-blur-sm ">
               Hover
             </span>
 
           </div>
-
         </div>
-
       </div>
-
     </div>
   );
-};  
+};
 
 
 export default AboutPage;

@@ -7,10 +7,6 @@ export const initBackgroundDots = (container) => {
 
   const dots = [];
 
-  // ==========================================
-  // CREATE DOTS
-  // ==========================================
-
   for (let i = 0; i < DOT_COUNT; i++) {
     const dot = document.createElement("span");
 
@@ -93,7 +89,6 @@ export const initBackgroundDots = (container) => {
 
   });
 
-
   const handleResize = () => {
 
     dots.forEach((dot) => {
@@ -118,7 +113,6 @@ export const initBackgroundDots = (container) => {
     });
 
   };
-
 
   window.addEventListener(
     "resize",

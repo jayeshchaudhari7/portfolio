@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-import profile from "../assets/images/profile.png";
+import profile from "../assets/images/profile.jpeg";
 import linkedin from "../assets/icons/linkedin.png";
 import mail from "../assets/icons/mail.png";
 

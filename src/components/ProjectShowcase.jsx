@@ -17,6 +17,8 @@ const ProjectShowcase = () => {
     return cleanup;
   }, []);
 
+    
+    
   return (
     <section
       ref={sectionRef}
@@ -54,7 +56,7 @@ const ProjectShowcase = () => {
         >
 
           {projects.map((project, index) => (
-
+            
             <div
               key={project.id}
               data-project={index}
@@ -77,9 +79,11 @@ const ProjectShowcase = () => {
                   overflow-hidden
                 "
               >
-
+                
+                
                 <img
                   src={project.image}
+                  
                   alt={project.title}
                   className="
                     project-image

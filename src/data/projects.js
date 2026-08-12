@@ -1,3 +1,8 @@
+import img1 from "../assets/images/1.jpg"
+import img2 from  "../assets/images/2.jpg"
+import img3 from "../assets/images/3.jpg"
+import img4 from "../assets/images/4.jpg"
+
 export const projects = [
   {
     id: 1,
@@ -12,7 +17,7 @@ export const projects = [
       "JavaScript",
       "Context API",
     ],
-    image: "src/assets/images/1.jpg",
+    image: img1,
     link: "https://github.com/jayeshchaudhari7",
   },
 
@@ -29,7 +34,7 @@ export const projects = [
       "MongoDB",
       "Tailwind",
     ],
-    image: "src/assets/images/2.jpg",
+    image: img2,
     link: "https://github.com/jayeshchaudhari7",
   },
 
@@ -46,7 +51,7 @@ export const projects = [
       "Tailwind",
       "LocalStorage",
     ],
-    image: "src/assets/images/3.jpg",
+    image: img3,
     link: "https://github.com/jayeshchaudhari7",
   },
 
@@ -63,7 +68,7 @@ export const projects = [
       "GSAP",
       "ScrollTrigger",
     ],
-    image: "src/assets/images/4.jpg",
+    image: img4,
     link: "https://github.com/jayeshchaudhari7",
   },
 ];

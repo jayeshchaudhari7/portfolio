@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router";
 
 import Navbar from "../components/Navbar";
@@ -8,9 +8,12 @@ import BackgroundDots from "../components/BackgroundDots";
 import { initNavbarAnimation } from "../animations/navbarAnimation";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
+import Loader from "../components/Loader";
+import Cursor from "../components/Cursor";
 
 const MainLayout = () => {
 
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const cleanup = initNavbarAnimation();
 
@@ -19,17 +22,26 @@ const MainLayout = () => {
 
   return (
     <>
-    <ScrollToTop/>
+    <Cursor/>
+      {loading && (
+        <Loader
+          onComplete={() => {
+            setLoading(false);
+          }}
+        />
+      )}
+
+      <ScrollToTop />
       <BackgroundDots />
 
       <Navbar />
       <ScrolledNavbar />
 
-      <main className="relative z-10">
+      <main className=" relative z-10">
         <Outlet />
       </main>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

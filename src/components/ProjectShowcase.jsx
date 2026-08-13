@@ -83,7 +83,7 @@ const ProjectShowcase = () => {
                 
                 <img
                   src={project.image}
-                  
+                  data-cursor="view"
                   alt={project.title}
                   className="
                     project-image

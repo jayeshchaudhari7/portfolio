@@ -26,7 +26,17 @@ html{
   font-family: "poppins";
   scrollbar-width: thin;
 }
+@media (min-width: 768px) {
+  body {
+    cursor: none;
+  }
 
+  a,
+  button,
+  [data-cursor] {
+    cursor: none;
+  }
+}
 
 .scroll-arrow {
   animation: scrollArrow 1.5s ease-in-out infinite;
